@@ -1,0 +1,23 @@
+# Use root/example as user/password credentials
+version: "3.1"
+
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    cap_add:
+      - SYS_NICE
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+  pact-broker:
+    image: pactfoundation/pact-broker:2.68.1.0
+    ports:
+      - "9292:9292"
+    depends_on:
+      - db
+    environment:
+      PACT_BROKER_DATABASE_ADAPTER: mysql2
+      PACT_BROKER_PORT: "9292"
+      PACT_BROKER_DATABASE_URL: "mysql2://root:example@172.19.0.2:3306/pacts"
+      PACT_BROKER_LOG_LEVEL: INFO
+      PACT_BROKER_SQL_LOG_LEVEL: DEBUG
