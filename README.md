@@ -19,7 +19,7 @@ These instructions will get you a copy of the project up and running on your loc
 2. [Install Docker](https://docs.docker.com/install/)
 
 
-## STEPS FOR SETTING UP PROJECT
+## Steps for setting up project
 1. Check the settings in the `docker-compose.yml` file and run `docker-compose up -d` in root folder
 
 This is to get a working mysql server running and also to start up the pact broker
@@ -27,7 +27,7 @@ This is to get a working mysql server running and also to start up the pact brok
 2. Make sure to create a local database for the pacts to be stored in and reconfigure the environment for the pact broker in the `docker-compose.yml` file if need be
 
 
-## LET'S GO ON A TOUR
+## Let's go on a tour
 
 ![Consumer-Driven Contract Testing Flow](https://miro.medium.com/max/933/1*xCdHRuW6GUZYlouV5TIUyA.png)
 
